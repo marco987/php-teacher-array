@@ -42,24 +42,22 @@
         ]
       ];
 
-    foreach ($db as $ruoli => $ruoliNomi) {
+      foreach ($db as $ruoli => $ruoliNomi) {
 
-      echo "Ruoli: " . $ruoli . "<br/>";
+        if ($ruoli == "teachers") {
+          echo "<p style='color:grey; font-weight: bold'>" . strtoupper($ruoli) . "</div><br>";
 
-      foreach ($ruoliNomi as $identita) {
+          foreach ($ruoliNomi as $nomi) {
+            echo "<p style='color:grey'>" . $nomi["name"] . " " . $nomi["lastname"] . "</div><br>";
+          }
+        } else if ($ruoli == "pm") {
+          echo "<p style='color:green; font-weight: bold'>" . strtoupper($ruoli) . "</div><br>";
 
-      $nome = $identita["name"];
-      $cognome = $identita["lastname"];
-
-      echo $nome . "<br/>" .
-           $cognome . "<br/><br/>";
+          foreach ($ruoliNomi as $nomi) {
+            echo "<p style='color:green'>" . $nomi["name"] . " " . $nomi["lastname"] . "</div><br>";
+          }
+        }
       };
-    };
-
-    // if (array_keys($db)=="teachers") {
-    //
-    // }
-
 
     ?>
 
