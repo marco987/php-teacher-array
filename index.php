@@ -42,8 +42,23 @@
         ]
       ];
 
-    
+    foreach ($db as $ruoli => $ruoliNomi) {
 
+      echo "Ruoli: " . $ruoli . "<br/>";
+
+      foreach ($ruoliNomi as $identita) {
+
+      $nome = $identita["name"];
+      $cognome = $identita["lastname"];
+
+      echo $nome . "<br/>" .
+           $cognome . "<br/><br/>";
+      };
+    };
+
+    // if (array_keys($db)=="teachers") {
+    //
+    // }
 
 
     ?>
